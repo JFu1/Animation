@@ -71,7 +71,8 @@ canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: -120, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -80, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
-
+//draw panda mouth
+canvas.drawEllipse(at: Point(x: -100, y: 50), width: 30, height: 30)
 /*:
  ## Show the Live View
  Don't see any results?
