@@ -24,7 +24,7 @@ import CanvasGraphics
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Show the canvas in the playground's live view
-PlaygroundPage.current.liveView = canvas
+//PlaygroundPage.current.liveView = canvas
 /*:
  ## Add your code
  
