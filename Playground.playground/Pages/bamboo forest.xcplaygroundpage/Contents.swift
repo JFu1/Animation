@@ -16,6 +16,8 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import CoreGraphics
+import AppKit
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -41,8 +43,8 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+//canvas.translate(to: Point(x: canvas.width / 2,
+//                           y: canvas.height / 2))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -58,21 +60,21 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-//draw panda head
+//try the stride
+//for y in stride(from: 100, through: 500, by: 50){
+ //   y
+
+ //   canvas.drawLine(from: Point(x: 100, y: y), to: Point(x: 200, y: y + 50)) }
+//for i in stride(from: 50, through: 200, by: 1){
+ //   canvas.drawLine(from: Point(x: 50, y: i), to: Point(x: 200, y: i))}
+
+// draw panda head
 canvas.fillColor = .white
 canvas.borderColor = .black
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: -100, y: 80), width: 100, height: 100)
-//draw panda eyes
-canvas.drawEllipse(at: Point(x: -120, y: 90), width: 20, height: 27)
+canvas.drawEllipse(at: Point(x: 320, y: 450), width: 120, height: 120)
+p.goToOrigin()
 
-canvas.drawEllipse(at: Point(x: -80, y: 90), width: 20, height: 27)
-canvas.fillColor = .black
-canvas.drawEllipse(at: Point(x: -120, y: 83.5), width: 15, height: 15)
-canvas.drawEllipse(at: Point(x: -80, y: 83.5), width: 15, height: 15)
-canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
-//draw panda mouth
-canvas.drawEllipse(at: Point(x: -100, y: 50), width: 30, height: 30)
 /*:
  ## Show the Live View
  Don't see any results?
