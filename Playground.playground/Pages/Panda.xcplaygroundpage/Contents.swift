@@ -73,9 +73,7 @@ canvas.drawEllipse(at: Point(x: -120, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -80, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
 
-//draw panda mouth
-p.goToOrigin()
-p.goto
+
 /*:
  ## Show the Live View
  Don't see any results?

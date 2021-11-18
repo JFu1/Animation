@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -49,31 +49,29 @@ PlaygroundPage.current.liveView = canvas
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 
+// Turn off high performance mode
+canvas.highPerformance = false
+
 /*:
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
 // Begin writing your code below (you can remove the examples shown)
 
 //try the stride
-//for y in stride(from: 100, through: 500, by: 50){
- //   y
+for y in stride(from: 100, through: 500, by: 50) {
+    y
+    canvas.drawLine(from: Point(x: 100, y: y), to: Point(x: 200, y: y + 50))
+    
+}
 
- //   canvas.drawLine(from: Point(x: 100, y: y), to: Point(x: 200, y: y + 50)) }
-//for i in stride(from: 50, through: 200, by: 1){
- //   canvas.drawLine(from: Point(x: 50, y: i), to: Point(x: 200, y: i))}
 
-// draw panda head
-canvas.fillColor = .white
-canvas.borderColor = .black
-canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: 320, y: 450), width: 120, height: 120)
-p.goToOrigin()
+
 
 /*:
  ## Show the Live View
@@ -82,7 +80,7 @@ p.goToOrigin()
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  

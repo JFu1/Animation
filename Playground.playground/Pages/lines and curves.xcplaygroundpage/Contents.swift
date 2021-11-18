@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 400
+let preferredHeight = 400
 /*:
  ## Required code
  
@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import AppKit
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -41,11 +42,10 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+//canvas.translate(to: Point(x: canvas.width / 2, y: canvas.height / 2))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -55,23 +55,36 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+// a loop draw pattern
+for a in stride(from: 0,
+                 through: 400,
+                 by: 50){
+//draw line in pattern
+canvas.drawLine(from: Point(x: a, y: 0),to: Point(x: 400, y: a))
+}
 
-// Begin writing your code below (you can remove the examples shown)
+// loop on top left corner same pattern
+for b in stride(from: 400,
+                through: 0,
+                by: -50){
+    canvas.drawLine(from: Point(x: 0, y: b), to: Point(x: b, y: 400))
+}
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// left down corner pattern
+for c in stride(from: 0,
+                    through: 400,
+                    by: 50){
+    
+    canvas.drawLine(from: Point(x: c, y: 0), to: Point(x: 0 , y: 400 - c ))
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
-
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+}
+for d in stride(from: 0, through: 400, by: 50){
+    canvas.drawLine(from: Point(x: 400, y: d), to: Point(x: 400 - d, y: 400))
+}
+for e in stride(from: 400, through: 0, by: -50){
+    canvas.drawLine(from: Point(x: 400, y: e),
+                    to: Point(x: e + 100, y: 0))
+}
 
 /*:
  ## Show the Live View
