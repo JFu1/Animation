@@ -55,18 +55,13 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-// a loop draw pattern
-for a in stride(from: 0,
-                 through: 400,
-                 by: 50){
-//draw line in pattern
-canvas.drawLine(from: Point(x: a, y: 0),to: Point(x: 400, y: a))
-}
+
 
 // loop on top left corner same pattern
 for b in stride(from: 400,
                 through: 0,
                 by: -50){
+    canvas.lineColor = .red
     canvas.drawLine(from: Point(x: 0, y: b), to: Point(x: b, y: 400))
 }
 
@@ -74,17 +69,17 @@ for b in stride(from: 400,
 for c in stride(from: 0,
                     through: 400,
                     by: 50){
+    //draw line in pattern
+    canvas.lineColor = .green
+    canvas.drawLine(from: Point(x: c, y: 0),to: Point(x: 400, y: c))
     
+    canvas.lineColor = .purple
     canvas.drawLine(from: Point(x: c, y: 0), to: Point(x: 0 , y: 400 - c ))
 
+    canvas.lineColor = .black
+    canvas.drawLine(from: Point(x: 400, y: c), to: Point(x: 400 - c, y: 400))
 }
-for d in stride(from: 0, through: 400, by: 50){
-    canvas.drawLine(from: Point(x: 400, y: d), to: Point(x: 400 - d, y: 400))
-}
-for e in stride(from: 400, through: 0, by: -50){
-    canvas.drawLine(from: Point(x: 400, y: e),
-                    to: Point(x: e + 100, y: 0))
-}
+
 
 /*:
  ## Show the Live View
