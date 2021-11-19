@@ -57,7 +57,10 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
-
+//draw panda ear
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: -140, y: 110), width: 30, height: 30)
+canvas.drawEllipse(at: Point(x: -62, y: 110), width: 30, height: 30)
 //draw panda head
 canvas.fillColor = .white
 canvas.borderColor = .black
@@ -72,7 +75,9 @@ canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: -120, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -80, y: 83.5), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
+canvas.fillColor = .white
 
+canvas.drawEllipse(at: Point(x: -100, y: -40), width: 130, height: 160)
 
 /*:
  ## Show the Live View
