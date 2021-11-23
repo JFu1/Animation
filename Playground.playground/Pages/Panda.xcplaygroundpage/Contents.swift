@@ -86,10 +86,11 @@ canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
 //draw mouth
 canvas.lineColor = .black
 canvas.drawCurve(from: Point(x: -103, y: 60),
-                 to: Point(x: -125, y: 50), control1: Point(x: -108, y: 50), control2: Point(x: -126, y: 50))
+                 to: Point(x: -126, y: 52), control1: Point(x: -106, y: 52), control2: Point(x: -124, y: 52))
 
 canvas.drawCurve(from: Point(x: -96, y: 60),
-                 to: Point(x: -73, y: 50), control1: Point(x: -90, y: 50), control2: Point(x: -72, y: 50))
+                 to: Point(x: -73, y: 52), control1: Point(x: -93, y: 52), control2: Point(x: -75, y: 52))
+
 
 
 
