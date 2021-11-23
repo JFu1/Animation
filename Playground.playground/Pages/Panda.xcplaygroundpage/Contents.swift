@@ -57,6 +57,11 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+canvas.drawShapesWithBorders = true
+//draw body
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: -100, y: -40), width: 130, height: 160)
+
 //draw panda ear
 canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: -140, y: 110), width: 30, height: 30)
@@ -69,15 +74,25 @@ canvas.drawEllipse(at: Point(x: -100, y: 80), width: 100, height: 100)
 
 //draw panda eyes
 canvas.drawEllipse(at: Point(x: -120, y: 90), width: 20, height: 27)
-
 canvas.drawEllipse(at: Point(x: -80, y: 90), width: 20, height: 27)
 canvas.fillColor = .black
-canvas.drawEllipse(at: Point(x: -120, y: 83.5), width: 15, height: 15)
-canvas.drawEllipse(at: Point(x: -80, y: 83.5), width: 15, height: 15)
+canvas.drawEllipse(at: Point(x: -120, y: 90), width: 15, height: 15)
+canvas.drawEllipse(at: Point(x: -80, y: 90), width: 15, height: 15)
 canvas.drawEllipse(at: Point(x: -100, y: 70), width: 20, height: 20)
-canvas.fillColor = .white
 
-canvas.drawEllipse(at: Point(x: -100, y: -40), width: 130, height: 160)
+
+
+
+//draw mouth
+canvas.lineColor = .black
+canvas.drawCurve(from: Point(x: -103, y: 60),
+                 to: Point(x: -125, y: 50), control1: Point(x: -108, y: 50), control2: Point(x: -126, y: 50))
+
+canvas.drawCurve(from: Point(x: -96, y: 60),
+                 to: Point(x: -73, y: 50), control1: Point(x: -90, y: 50), control2: Point(x: -72, y: 50))
+
+
+
 
 /*:
  ## Show the Live View
