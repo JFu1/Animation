@@ -55,40 +55,38 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 
 
-
-
+//all colors.
 let backgroundcolor = Color(hue: 199, saturation: 66, brightness: 84, alpha: 100)
-let transparentGreen = Color(hue: 120, saturation: 80, brightness: 40, alpha: 50)
-let transparentorange = Color(hue: 40, saturation: 80, brightness: 80, alpha: 50)
+let transparentrose = Color(hue: 80, saturation: 7, brightness: 87, alpha: 100)
+let transparentpurple = Color(hue: 310, saturation: 54, brightness: 61, alpha: 90 )
 let transparentwhite = Color(hue: 0, saturation: 80, brightness: 80, alpha: 0)
 canvas.highPerformance = true
+//background
 for b in stride(from: 0, through: 400, by: 1){
     canvas.lineColor = backgroundcolor
     canvas.drawLine(from: Point(x: b, y: 0 ), to: Point(x: b, y: 600))
     
 }
+// for the 2 circles
 canvas.highPerformance = false
-canvas.defaultBorderWidth = 10
+canvas.defaultBorderWidth = 12
 canvas.drawShapesWithBorders = true
 canvas.drawShapesWithFill = false
-
+//circle in the middle
+for i in stride(from: 400, through: 0, by: -50){
+    canvas.borderColor = transparentrose
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i, height: i)
+    canvas.borderColor = transparentwhite
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i-5, height: i-5)
+}
+//circle on the top
 for i in stride(from: 400, through: 0, by: -50){
     canvas.borderColor =  transparentwhite
     canvas.drawEllipse(at: Point(x: 200, y: 500), width: i, height: i)
-    canvas.borderColor = transparentorange
+    canvas.borderColor = transparentpurple
     canvas.drawEllipse(at: Point(x: 200, y: 500), width: i-5, height: i-5)
-    
-    canvas.borderColor = transparentGreen
-    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i, height: i)
-
-    canvas.borderColor = transparentwhite
-    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i-5, height: i-5)
-    
-   
-    
-
 }
- 
+
 
 
 //canvas.drawEllipse(at: Point(x: 200, y: 500), width: i, height: i)
