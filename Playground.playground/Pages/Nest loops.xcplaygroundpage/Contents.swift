@@ -44,33 +44,63 @@ PlaygroundPage.current.liveView = canvas
 // Show a grid
 canvas.drawAxes(withScale: true, by: 50, color: .black)
 
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
- */
-for i in stride(from: 400, through: 0, by: -50){
-    canvas.fillColor = .black
-    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i, height: i)
-    canvas.fillColor = .white
-    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i - 25, height: i - 25)
-    canvas.fillColor = .black
-    canvas.drawEllipse(at: Point(x: 200, y: 500), width: i, height: i)
-    canvas.fillColor = .white
-    canvas.drawEllipse(at: Point(x: 200, y: 500), width: i-25, height: i-25)
+
+
+
+
+
+
+
+
+
+
+
+
+let backgroundcolor = Color(hue: 199, saturation: 66, brightness: 84, alpha: 100)
+let transparentGreen = Color(hue: 120, saturation: 80, brightness: 40, alpha: 50)
+let transparentorange = Color(hue: 40, saturation: 80, brightness: 80, alpha: 50)
+let transparentwhite = Color(hue: 0, saturation: 80, brightness: 80, alpha: 0)
+canvas.highPerformance = true
+for b in stride(from: 0, through: 400, by: 1){
+    canvas.lineColor = backgroundcolor
+    canvas.drawLine(from: Point(x: b, y: 0 ), to: Point(x: b, y: 600))
     
+}
+canvas.highPerformance = false
+canvas.defaultBorderWidth = 10
+canvas.drawShapesWithBorders = true
+canvas.drawShapesWithFill = false
+
+for i in stride(from: 400, through: 0, by: -50){
+    canvas.borderColor =  transparentwhite
+    canvas.drawEllipse(at: Point(x: 200, y: 500), width: i, height: i)
+    canvas.borderColor = transparentorange
+    canvas.drawEllipse(at: Point(x: 200, y: 500), width: i-5, height: i-5)
+    
+    canvas.borderColor = transparentGreen
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i, height: i)
+
+    canvas.borderColor = transparentwhite
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: i-5, height: i-5)
+    
+   
     
 
 }
  
 
 
+//canvas.drawEllipse(at: Point(x: 200, y: 500), width: i, height: i)
+
+//canvas.drawEllipse(at: Point(x: 200, y: 500), width: i-25, height: i-25)
+
 
 //for loop in stride(from: 300, through: 475, by: 12.5) {
     //canvas.drawEllipse(at: Point(x: 300, y: 300), width: 10, height: 10)}
+
+
+
 
 /*:
  ## Show the Live View
