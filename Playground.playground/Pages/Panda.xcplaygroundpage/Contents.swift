@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import Darwin
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -57,10 +58,20 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+
 canvas.drawShapesWithBorders = true
+
+//draw arm
+canvas.drawEllipse(at: Point(x: -180, y: 0), width:80 , height: 40)
+canvas.drawEllipse(at: Point(x: -20, y: 0), width:80 , height: 40)
+
+// draw legs
+
+canvas.drawEllipse(at: Point(x: -80, y: -120), width:30 , height: 80)
+canvas.drawEllipse(at: Point(x: -120, y: -120), width:30 , height: 80)
 //draw body
 canvas.fillColor = .white
-canvas.drawEllipse(at: Point(x: -100, y: -40), width: 130, height: 160)
+canvas.drawEllipse(at: Point(x: -100, y: -40), width: 120, height: 160)
 
 //draw panda ear
 canvas.fillColor = .black
@@ -90,6 +101,8 @@ canvas.drawCurve(from: Point(x: -103, y: 60),
 
 canvas.drawCurve(from: Point(x: -96, y: 60),
                  to: Point(x: -73, y: 52), control1: Point(x: -93, y: 52), control2: Point(x: -75, y: 52))
+
+
 
 
 
