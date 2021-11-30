@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -40,12 +40,10 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -58,21 +56,22 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+for xposition in stride(from: 0, through: 400, by: 45){
+  
+    for yposition in stride(from: 0, through: 500, by: 45){
+        
+        //canvas draw anchor
+        canvas.fillColor = .red
+        canvas.drawEllipse(at: Point(x: xposition, y: yposition), width: 5, height: 5)
+    // tilted rectangle
+        canvas.fillColor = .blue
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
-
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+        var rectangle: [Point] = []
+        rectangle.append(Point(x: xposition, y: yposition+30))
+        rectangle.append(Point(x: xposition+20, y: yposition+50))
+        rectangle.append(Point(x: xposition+50, y: yposition+20))
+        rectangle.append(Point(x: xposition+30, y: yposition))
+        canvas.drawCustomShape(with: rectangle)
 /*:
  ## Show the Live View
  Don't see any results?

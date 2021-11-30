@@ -103,6 +103,7 @@ canvas.drawText(message: "saturday", at: Point(x: 20, y: 545), size: 10, kerning
 canvas.drawText(message: "boston, mass.", at: Point(x: 275, y: 515), size: 10, kerning: 0)
 canvas.drawText(message: "528 commonwealth", at: Point(x: 275, y: 530), size: 10, kerning: 0)
 canvas.drawText(message: "at the rat", at: Point(x: 275, y: 545), size: 10, kerning: 0)
+canvas.textColor = grey
 canvas.drawText(message: "with", at: Point(x: 275, y: 460), size: 15, kerning: 0)
 canvas.drawText(message: "throwing muses", at: Point(x: 275, y: 440), size: 15, kerning: 0)
 canvas.drawText(message: "big dipper", at: Point(x: 275, y: 420), size: 15, kerning: 0)
