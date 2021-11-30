@@ -94,10 +94,19 @@ for bg in stride(from: 0, through: 400, by: 1){
 }
 canvas.highPerformance = false
 
+
+// draw text
 canvas.drawText(message: "pixies", at: Point(x: 20, y: 420), size: 65, kerning: 0)
 canvas.drawText(message: "9 pm over 21", at: Point(x: 20, y: 515), size: 10, kerning: 0)
 canvas.drawText(message: "december 13 1986", at: Point(x: 20, y: 530), size: 10, kerning: 0)
 canvas.drawText(message: "saturday", at: Point(x: 20, y: 545), size: 10, kerning: 0)
+canvas.drawText(message: "boston, mass.", at: Point(x: 275, y: 515), size: 10, kerning: 0)
+canvas.drawText(message: "528 commonwealth", at: Point(x: 275, y: 530), size: 10, kerning: 0)
+canvas.drawText(message: "at the rat", at: Point(x: 275, y: 545), size: 10, kerning: 0)
+canvas.drawText(message: "with", at: Point(x: 275, y: 460), size: 15, kerning: 0)
+canvas.drawText(message: "throwing muses", at: Point(x: 275, y: 440), size: 15, kerning: 0)
+canvas.drawText(message: "big dipper", at: Point(x: 275, y: 420), size: 15, kerning: 0)
+
 /*:
  ## Show the Live View
  Don't see any results?
