@@ -53,43 +53,44 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+// colors
 let orange = Color(hue: 15, saturation: 81, brightness: 88, alpha: 100)
 let yellow = Color(hue: 46, saturation: 71, brightness: 97, alpha: 100)
 let grey = Color(hue: 78, saturation: 4, brightness: 88, alpha: 100)
 canvas.highPerformance = true
+
+//background
 canvas.fillColor = orange
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
-// Begin writing your code below (you can remove the examples shown)
 
 
-
+//left side big yellow triangle in the back.
 canvas.fillColor = yellow
-
-var greentriangle: [Point] = []
-greentriangle.append(Point(x: 0, y: 200))
-greentriangle.append(Point(x: 400, y: 600))
-greentriangle.append(Point(x: 400, y: 200))
-canvas.drawCustomShape(with: greentriangle)
-
-canvas.fillColor = grey
 var yellowtriangle: [Point] = []
 yellowtriangle.append(Point(x: 0, y: 200))
 yellowtriangle.append(Point(x: 400, y: 600))
-yellowtriangle.append(Point(x: 0, y: 600))
+yellowtriangle.append(Point(x: 400, y: 200))
 canvas.drawCustomShape(with: yellowtriangle)
+
+//right side big grey triangle in the back
+canvas.fillColor = grey
+var greytriangle: [Point] = []
+greytriangle.append(Point(x: 0, y: 200))
+greytriangle.append(Point(x: 400, y: 600))
+greytriangle.append(Point(x: 0, y: 600))
+canvas.drawCustomShape(with: greytriangle)
 
 
 canvas.highPerformance = false
 
-//black triangle
+
+//little orange triangles in stride
 for xposition in stride(from: 0, through: 400, by: 45){
   
     for yposition in stride(from: 200, through: 600, by: 45){
         
-    // tilted triangle 2
         canvas.fillColor = orange
     
-
         var triangle: [Point] = []
         triangle.append(Point(x: xposition, y: yposition))
         triangle.append(Point(x: xposition+45, y: yposition+45))
@@ -97,6 +98,15 @@ for xposition in stride(from: 0, through: 400, by: 45){
         canvas.drawCustomShape(with: triangle)
     }}
 
+//draw text
+canvas.textColor = grey
+canvas.drawText(message: "talking heads", at: Point(x: 25, y: 150), size: 30, kerning: 0)
+canvas.drawText(message: "september 12, 13, 14, 1975", at: Point(x: 25, y: 25), size: 8, kerning: 0)
+canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 25, y: 40), size: 8, kerning: 0)
+canvas.drawText(message: "315 bowery, newyork city", at: Point(x: 150, y: 25), size: 8, kerning: 0)
+canvas.drawText(message: "at cbgb and omfug", at: Point(x: 150, y: 40), size: 8, kerning: 0)
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 275, y: 25), size: 8, kerning: 0)
+canvas.drawText(message: "also appearing:", at: Point(x: 275, y: 40), size: 8, kerning: 0)
 
 /*:
  ## Show the Live View
