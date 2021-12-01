@@ -53,25 +53,51 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-
+canvas.highPerformance = true
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 // Begin writing your code below (you can remove the examples shown)
 
+//black triangle
 for xposition in stride(from: 0, through: 400, by: 45){
   
-    for yposition in stride(from: 0, through: 500, by: 45){
+    for yposition in stride(from: 200, through: 600, by: 45){
         
-        //canvas draw anchor
-        canvas.fillColor = .red
-        canvas.drawEllipse(at: Point(x: xposition, y: yposition), width: 5, height: 5)
-    // tilted rectangle
-        canvas.fillColor = .blue
+    // tilted triangle 2
+        canvas.fillColor = .black
+    
 
-        var rectangle: [Point] = []
-        rectangle.append(Point(x: xposition, y: yposition+30))
-        rectangle.append(Point(x: xposition+20, y: yposition+50))
-        rectangle.append(Point(x: xposition+50, y: yposition+20))
-        rectangle.append(Point(x: xposition+30, y: yposition))
-        canvas.drawCustomShape(with: rectangle)
+        var triangle: [Point] = []
+        triangle.append(Point(x: xposition, y: yposition))
+        triangle.append(Point(x: xposition+45, y: yposition+45))
+        triangle.append(Point(x: xposition+0, y: yposition+45))
+        canvas.drawCustomShape(with: triangle)
+    }}
+
+
+
+
+//
+for xposition in stride(from: 0, through: 400, by: 45){
+  
+    for yposition in stride(from: 200, through: 600, by: 45){
+       
+    // tilted triangle
+        canvas.fillColor = .green
+
+        var triangle: [Point] = []
+        triangle.append(Point(x: xposition, y: yposition))
+        triangle.append(Point(x: xposition+45, y: yposition+45))
+        triangle.append(Point(x: xposition+45, y: yposition+0))
+        canvas.drawCustomShape(with: triangle)
+        
+        
+    }
+    
+}
+canvas.highPerformance = false
+
+
+
 /*:
  ## Show the Live View
  Don't see any results?

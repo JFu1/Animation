@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -40,12 +40,10 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -55,23 +53,50 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-
+let orange = Color(hue: 15, saturation: 81, brightness: 88, alpha: 100)
+let yellow = Color(hue: 46, saturation: 71, brightness: 97, alpha: 100)
+let grey = Color(hue: 78, saturation: 4, brightness: 88, alpha: 100)
+canvas.highPerformance = true
+canvas.fillColor = orange
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
 
-// Go back to origin
-p.goToOrigin()
+canvas.fillColor = yellow
 
-// Change the pen color
-p.penColor = .red
+var greentriangle: [Point] = []
+greentriangle.append(Point(x: 0, y: 200))
+greentriangle.append(Point(x: 400, y: 600))
+greentriangle.append(Point(x: 400, y: 200))
+canvas.drawCustomShape(with: greentriangle)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+canvas.fillColor = grey
+var yellowtriangle: [Point] = []
+yellowtriangle.append(Point(x: 0, y: 200))
+yellowtriangle.append(Point(x: 400, y: 600))
+yellowtriangle.append(Point(x: 0, y: 600))
+canvas.drawCustomShape(with: yellowtriangle)
+
+
+canvas.highPerformance = false
+
+//black triangle
+for xposition in stride(from: 0, through: 400, by: 45){
+  
+    for yposition in stride(from: 200, through: 600, by: 45){
+        
+    // tilted triangle 2
+        canvas.fillColor = orange
+    
+
+        var triangle: [Point] = []
+        triangle.append(Point(x: xposition, y: yposition))
+        triangle.append(Point(x: xposition+45, y: yposition+45))
+        triangle.append(Point(x: xposition+0, y: yposition+45))
+        canvas.drawCustomShape(with: triangle)
+    }}
+
 
 /*:
  ## Show the Live View
