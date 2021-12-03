@@ -51,32 +51,39 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-
-// Begin writing your code below (you can remove the examples shown)
-canvas.borderColor = .purple
-//canvas.drawRectangle(at: Point(x: 0, y: 0), width: 600, height: 400)
-canvas
-//draw rectangle test
-canvas.drawShapesWithFill = false
-canvas.drawShapesWithBorders = true
-
-for i in stride(from: 40, through: 380, by: 110){
-    canvas.borderColor = .orange
-    canvas.drawRectangle(at: Point(x: 0, y: 0), width: i, height: i, anchoredBy: .centre, borderWidth: 15)
-}
-
-
+//canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+//// Begin writing your code below (you can remove the examples shown)
+//canvas.borderColor = .purple
+////canvas.drawRectangle(at: Point(x: 0, y: 0), width: 600, height: 400)
+//canvas
+////draw rectangle test
+//canvas.drawShapesWithFill = false
+//canvas.drawShapesWithBorders = true
+//
+//for i in stride(from: 40, through: 380, by: 110){
+//    canvas.borderColor = .orange
+//    canvas.drawRectangle(at: Point(x: 0, y: 0), width: i, height: i, anchoredBy: .centre, borderWidth: 15)
+//}
 
 
 
-for i in stride(from: -13, through: 350, by: 110){
-    canvas.borderColor = .yellow
 
-    canvas.drawRectangle(at: Point(x: 0, y: 0), width: i, height: i, anchoredBy: .centre, borderWidth: 15)
-}
-canvas.drawShapesWithFill = true
-canvas.drawRectangle(at: Point(x: 0, y: 0), width: 13, height: 13)
 
+//for i in stride(from: -13, through: 350, by: 110){
+//    canvas.borderColor = .yellow
+//
+//    canvas.drawRectangle(at: Point(x: 0, y: 0), width: i, height: i, anchoredBy: .centre, borderWidth: 15)
+//}
+//canvas.drawShapesWithFill = true
+//canvas.drawRectangle(at: Point(x: 0, y: 0), width: 13, height: 13)
+
+//canvas.drawShapesWithFill = false
+//canvas.drawShapesWithBorders = true
+//for x in stride(from: 40, through: 400, by: 56){
+//    
+//    if x
+//    canvas.drawRectangle(at: Point(x: 0, y: 0), width: x, height: x, anchoredBy: .centre, borderWidth: 14)
+//}
 /*:
  ## Show the Live View
  Don't see any results?
