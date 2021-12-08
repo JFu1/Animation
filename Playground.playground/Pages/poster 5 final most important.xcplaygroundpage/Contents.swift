@@ -80,18 +80,30 @@ for u in stride(from: 50, through: 375, by: 100){
 
 for p in stride(from: 460, through: 150, by: -100){
     for t in stride(from: 30, through: 375, by: 100){
+        //second level
         if p>400{
+            //left little spine
+            canvas.drawLine(from: Point(x: t, y: p-5), to: Point(x: t+20, y: p+10), lineWidth: 10, capStyle: .round, dashed: false)
+        
+            canvas.drawLine(from: Point(x: t, y: p-25), to: Point(x: t+20, y: p-10), lineWidth: 10, capStyle: .round, dashed: false)
             
-            canvas.drawLine(from: Point(x: t, y: p), to: Point(x: t+40, y: p), lineWidth: 10, capStyle: .round, dashed: false)
-            canvas.drawLine(from: Point(x: t, y: p-15), to: Point(x: t+40, y: p-15), lineWidth: 10, capStyle: .round, dashed: false)
-            canvas.drawLine(from: Point(x: t, y: p-30), to: Point(x: t+40, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t, y: p-45), to: Point(x: t+20, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
+            // right spine
+            canvas.drawLine(from: Point(x: t+20, y: p+10), to: Point(x: t+40, y: p-5), lineWidth: 10, capStyle: .round, dashed: false)
+            
+            canvas.drawLine(from: Point(x: t+20, y: p-10), to: Point(x: t+40, y: p-25), lineWidth: 10, capStyle: .round, dashed: false)
+            
+            canvas.drawLine(from: Point(x: t+20, y: p-30), to: Point(x: t+40, y: p-45), lineWidth: 10, capStyle: .round, dashed: false)
+
+
+        
             
         } else {
-            canvas.drawLine(from: Point(x: t, y: p-5), to: Point(x: t+40, y: p-5), lineWidth: 15, capStyle: .round, dashed: false)
+      
+            canvas.drawLine(from: Point(x: t, y: p-25), to: Point(x: t+40, y: p-25), lineWidth: 30, capStyle: .round, dashed: false)
         }
         
-        
-    
+  
     }
 }
 
