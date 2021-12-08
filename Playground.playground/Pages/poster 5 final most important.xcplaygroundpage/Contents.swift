@@ -51,11 +51,17 @@ canvas.lineColor = .black
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
+canvas.fillColor = .red
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 //all spine main bone.
 for y in stride(from: 570, through: 150, by: -100){
     for x in stride(from: 50, through: 350, by: 100){
-        
-        canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
+        if y<200{
+            canvas.drawLine(from: Point(x: x, y: y-10), to: Point(x: x, y: y-40), lineWidth: 25, capStyle: .round, dashed: false)
+        } else {
+            canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
+        }
+       
     }
 }
 
@@ -99,38 +105,35 @@ for p in stride(from: 460, through: 150, by: -100){
         
             
         } else {
-      
-            canvas.drawLine(from: Point(x: t, y: p-25), to: Point(x: t+40, y: p-25), lineWidth: 30, capStyle: .round, dashed: false)
+    //third line
+            canvas.drawLine(from: Point(x: t+10, y: p-15), to: Point(x: t+30, y: p-15), lineWidth: 30, capStyle: .round, dashed: false)
         }
         
   
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // last line circles
+canvas.fillColor = .black
+for xy in stride(from: 50, through: 350, by: 100){
+    canvas.drawEllipse(at: Point(x: xy, y: 50), width: 50, height: 50)
+}
 
 //background
 canvas.drawRectangle(at: Point(x: 0, y: 200), width: 400, height: 200)
+
+//text
+canvas.textColor = .white
+canvas.drawText(message: "When The Spine", at: Point(x: 10, y: 350), size: 30, kerning: 0)
+canvas.drawText(message: "Becomes Opal", at: Point(x: 10, y: 300), size: 30, kerning: 0)
+canvas.drawText(message: "2019, March, 19", at: Point(x: 10, y: 250), size: 10, kerning: 0)
+canvas.drawText(message: "Mercedes-Benz Arena", at: Point(x: 10, y: 210), size: 10, kerning: 0)
+canvas.drawText(message: "ShangHai", at: Point(x: 10, y: 230), size: 10, kerning: 0)
+canvas.drawText(message: "By Yonezu Kenshi", at: Point(x: 200, y: 220), size: 20, kerning: 0)
+
+
+
+
 
 /*:
  ## Show the Live View
