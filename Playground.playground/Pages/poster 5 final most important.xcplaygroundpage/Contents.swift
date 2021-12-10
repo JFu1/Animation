@@ -51,21 +51,37 @@ canvas.lineColor = .black
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
-canvas.fillColor = .red
+//color sets
+let backgroundred = Color(hue: 354, saturation: 100, brightness: 50, alpha: 100)
+let Mainbonepurple = Color(hue: 50, saturation: 38, brightness: 100, alpha: 100)
+let secondballblue = Color(hue: 254, saturation: 83, brightness: 80, alpha: 100)
+let firstballgreen = Color(hue: 68, saturation: 100, brightness: 70, alpha: 100)
+let thirdballpurple = Color(hue: 282, saturation: 100, brightness: 36, alpha: 100)
+let forthballyellow = Color(hue: 50, saturation: 94, brightness: 60, alpha: 100)
+
+//backgroud all back
+canvas.fillColor = backgroundred
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
-//all spine main bone.
+
+
+// spine main bone the bone in the middle
+
 for y in stride(from: 570, through: 150, by: -100){
     for x in stride(from: 50, through: 350, by: 100){
-        if y<200{
+        if y<200{canvas.lineColor = Mainbonepurple
             canvas.drawLine(from: Point(x: x, y: y-10), to: Point(x: x, y: y-40), lineWidth: 25, capStyle: .round, dashed: false)
-        } else {
+        } else if y == 470{
+            canvas.drawLine(from: Point(x: x, y: y+15), to: Point(x: x, y: y-35), lineWidth: 13, capStyle: .round, dashed: false)
+        }
+        else {canvas.lineColor = Mainbonepurple
             canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
         }
-       
+        
     }
 }
 
-//left side spine bone
+//left side spine bone. first level bone
+
 for i in stride(from: 35, through: 375, by: 100){
     canvas.drawLine(from: Point(x: i, y: 555), to: Point(x: i+15, y: 565), lineWidth: 5, capStyle: .round, dashed: false)
     canvas.drawLine(from: Point(x: i, y: 545), to: Point(x: i+15, y: 555), lineWidth: 5, capStyle: .round, dashed: false)
@@ -74,8 +90,8 @@ for i in stride(from: 35, through: 375, by: 100){
 }
 
 
+//right side spine bone. first level bone
 
-//right side spine bone.
 for u in stride(from: 50, through: 375, by: 100){
     canvas.drawLine(from: Point(x: u, y: 565), to: Point(x: u+15, y: 555), lineWidth: 5, capStyle: .round, dashed: false)
     canvas.drawLine(from: Point(x: u, y: 555), to: Point(x: u+15, y: 545), lineWidth: 5, capStyle: .round, dashed: false)
@@ -84,41 +100,56 @@ for u in stride(from: 50, through: 375, by: 100){
     
 }
 
+
 for p in stride(from: 460, through: 150, by: -100){
     for t in stride(from: 30, through: 375, by: 100){
         //second level
         if p>400{
             //left little spine
-            canvas.drawLine(from: Point(x: t, y: p-5), to: Point(x: t+20, y: p+10), lineWidth: 10, capStyle: .round, dashed: false)
-        
+            
+            canvas.drawLine(from: Point(x: t, y: p+15), to: Point(x: t+20, y: p-5), lineWidth: 10, capStyle: .round, dashed: false)
+            
             canvas.drawLine(from: Point(x: t, y: p-25), to: Point(x: t+20, y: p-10), lineWidth: 10, capStyle: .round, dashed: false)
             
             canvas.drawLine(from: Point(x: t, y: p-45), to: Point(x: t+20, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
-            // right spine
+            // right little spine
+            
             canvas.drawLine(from: Point(x: t+20, y: p+10), to: Point(x: t+40, y: p-5), lineWidth: 10, capStyle: .round, dashed: false)
             
             canvas.drawLine(from: Point(x: t+20, y: p-10), to: Point(x: t+40, y: p-25), lineWidth: 10, capStyle: .round, dashed: false)
             
             canvas.drawLine(from: Point(x: t+20, y: p-30), to: Point(x: t+40, y: p-45), lineWidth: 10, capStyle: .round, dashed: false)
-
-
-        
+            
             
         } else {
-    //third line
+            //third line
             canvas.drawLine(from: Point(x: t+10, y: p-15), to: Point(x: t+30, y: p-15), lineWidth: 30, capStyle: .round, dashed: false)
         }
         
-  
+        
     }
 }
 
-    // last line circles
+// last line circles
 canvas.fillColor = .black
 for xy in stride(from: 50, through: 350, by: 100){
+    if xy == 50{
+        canvas.fillColor = firstballgreen
+        
+    } else if xy == 150{
+        canvas.fillColor = secondballblue
+    
+    } else if xy == 250{
+        canvas.fillColor = thirdballpurple
+    } else if xy == 350{
+        canvas.fillColor = forthballyellow
+    }
+    
+    
     canvas.drawEllipse(at: Point(x: xy, y: 50), width: 50, height: 50)
+    
 }
-
+canvas.fillColor = .black
 //background
 canvas.drawRectangle(at: Point(x: 0, y: 200), width: 400, height: 200)
 
