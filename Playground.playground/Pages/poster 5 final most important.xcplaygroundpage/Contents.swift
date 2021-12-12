@@ -51,6 +51,7 @@ canvas.lineColor = .black
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
+
 //color sets
 let backgroundred = Color(hue: 354, saturation: 100, brightness: 50, alpha: 100)
 let Mainbonepurple = Color(hue: 50, saturation: 38, brightness: 100, alpha: 100)
@@ -107,18 +108,18 @@ for p in stride(from: 460, through: 150, by: -100){
         if p>400{
             //left little spine
             
-            canvas.drawLine(from: Point(x: t, y: p+15), to: Point(x: t+20, y: p-5), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t, y: p+10), to: Point(x: t+20, y: p+25), lineWidth: 10, capStyle: .round, dashed: false)
             
-            canvas.drawLine(from: Point(x: t, y: p-25), to: Point(x: t+20, y: p-10), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t, y: p-10), to: Point(x: t+20, y: p+5), lineWidth: 10, capStyle: .round, dashed: false)
             
-            canvas.drawLine(from: Point(x: t, y: p-45), to: Point(x: t+20, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t, y: p-30), to: Point(x: t+20, y: p-15), lineWidth: 10, capStyle: .round, dashed: false)
             // right little spine
             
-            canvas.drawLine(from: Point(x: t+20, y: p+10), to: Point(x: t+40, y: p-5), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t+20, y: p+25), to: Point(x: t+40, y: p+10), lineWidth: 10, capStyle: .round, dashed: false)
             
-            canvas.drawLine(from: Point(x: t+20, y: p-10), to: Point(x: t+40, y: p-25), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t+20, y: p+5), to: Point(x: t+40, y: p-10), lineWidth: 10, capStyle: .round, dashed: false)
             
-            canvas.drawLine(from: Point(x: t+20, y: p-30), to: Point(x: t+40, y: p-45), lineWidth: 10, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: t+20, y: p-15), to: Point(x: t+40, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
             
             
         } else {
