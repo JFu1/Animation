@@ -54,7 +54,7 @@ canvas.lineColor = .black
 
 //color sets
 let backgroundred = Color(hue: 354, saturation: 100, brightness: 50, alpha: 100)
-let Mainbonepurple = Color(hue: 50, saturation: 38, brightness: 100, alpha: 100)
+let spineyellow = Color(hue: 50, saturation: 38, brightness: 100, alpha: 100)
 let secondballblue = Color(hue: 254, saturation: 83, brightness: 80, alpha: 100)
 let firstballgreen = Color(hue: 68, saturation: 100, brightness: 70, alpha: 100)
 let thirdballpurple = Color(hue: 282, saturation: 100, brightness: 36, alpha: 100)
@@ -66,7 +66,7 @@ canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 
 // spine main bone the bone in the middle
-
+canvas.lineColor = spineyellow
 for y in stride(from: 570, through: 150, by: -100){
     for x in stride(from: 50, through: 350, by: 100){
         if y<200{
@@ -74,7 +74,7 @@ for y in stride(from: 570, through: 150, by: -100){
         } else if y == 470{
             canvas.drawLine(from: Point(x: x, y: y+15), to: Point(x: x, y: y-35), lineWidth: 18, capStyle: .round, dashed: false)
         }
-        else {canvas.lineColor = Mainbonepurple
+        else {
             canvas.drawLine(from: Point(x: x, y: y+2), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
         }
         
