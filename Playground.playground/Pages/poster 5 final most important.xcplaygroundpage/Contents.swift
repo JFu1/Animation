@@ -104,7 +104,7 @@ for u in stride(from: 50, through: 375, by: 100){
 
 for p in stride(from: 460, through: 150, by: -100){
     for t in stride(from: 30, through: 375, by: 100){
-        //second level
+//second level
         if p>400{
             //left little spine
             
@@ -121,12 +121,11 @@ for p in stride(from: 460, through: 150, by: -100){
             
             canvas.drawLine(from: Point(x: t+20, y: p-15), to: Point(x: t+40, y: p-30), lineWidth: 10, capStyle: .round, dashed: false)
             
-            
         } else {
-            //third line
+//third line
+            //one line of spine
             canvas.drawLine(from: Point(x: t+10, y: p-15), to: Point(x: t+30, y: p-15), lineWidth: 30, capStyle: .round, dashed: false)
         }
-        
         
     }
 }
@@ -146,22 +145,23 @@ for xy in stride(from: 50, through: 350, by: 100){
         canvas.fillColor = forthballyellow
     }
     
-    
     canvas.drawEllipse(at: Point(x: xy, y: 50), width: 50, height: 50)
     
 }
 canvas.fillColor = .black
+
 //background
 canvas.drawRectangle(at: Point(x: 0, y: 200), width: 400, height: 200)
 
 //text
 canvas.textColor = .white
-canvas.drawText(message: "When The Spine", at: Point(x: 10, y: 350), size: 30, kerning: 0)
-canvas.drawText(message: "Becomes Opal", at: Point(x: 10, y: 300), size: 30, kerning: 0)
-canvas.drawText(message: "2019, March, 19", at: Point(x: 10, y: 250), size: 10, kerning: 0)
-canvas.drawText(message: "Mercedes-Benz Arena", at: Point(x: 10, y: 210), size: 10, kerning: 0)
-canvas.drawText(message: "ShangHai", at: Point(x: 10, y: 230), size: 10, kerning: 0)
-canvas.drawText(message: "By Yonezu Kenshi", at: Point(x: 200, y: 220), size: 20, kerning: 0)
+
+canvas.drawText(message: "when the spine", at: Point(x: 10, y: 350), size: 30, kerning: 0)
+canvas.drawText(message: "becomes opal", at: Point(x: 10, y: 318), size: 30, kerning: 0)
+canvas.drawText(message: "2019, march, 19", at: Point(x: 10, y: 240), size: 10, kerning: 0)
+canvas.drawText(message: "mercedes-benz arena", at: Point(x: 10, y: 210), size: 10, kerning: 0)
+canvas.drawText(message: "shangHai", at: Point(x: 10, y: 225), size: 10, kerning: 0)
+canvas.drawText(message: "by yonezu Kenshi", at: Point(x: 215, y: 210), size: 20, kerning: 0)
 
 
 
