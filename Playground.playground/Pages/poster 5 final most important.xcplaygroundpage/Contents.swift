@@ -69,13 +69,13 @@ canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 for y in stride(from: 570, through: 150, by: -100){
     for x in stride(from: 50, through: 350, by: 100){
-        if y<200{canvas.lineColor = Mainbonepurple
+        if y<200{
             canvas.drawLine(from: Point(x: x, y: y-10), to: Point(x: x, y: y-40), lineWidth: 25, capStyle: .round, dashed: false)
         } else if y == 470{
-            canvas.drawLine(from: Point(x: x, y: y+15), to: Point(x: x, y: y-35), lineWidth: 13, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: x, y: y+15), to: Point(x: x, y: y-35), lineWidth: 18, capStyle: .round, dashed: false)
         }
         else {canvas.lineColor = Mainbonepurple
-            canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
+            canvas.drawLine(from: Point(x: x, y: y+2), to: Point(x: x, y: y-50), lineWidth: 13, capStyle: .round, dashed: false)
         }
         
     }
@@ -84,20 +84,20 @@ for y in stride(from: 570, through: 150, by: -100){
 //left side spine bone. first level bone
 
 for i in stride(from: 35, through: 375, by: 100){
-    canvas.drawLine(from: Point(x: i, y: 555), to: Point(x: i+15, y: 565), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: i, y: 545), to: Point(x: i+15, y: 555), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: i, y: 535), to: Point(x: i+15, y: 545), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: i, y: 525), to: Point(x: i+15, y: 535), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: i, y: 560), to: Point(x: i+15, y: 575), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: i, y: 545), to: Point(x: i+15, y: 560), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: i, y: 530), to: Point(x: i+15, y: 545), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: i, y: 515), to: Point(x: i+15, y: 530), lineWidth: 5, capStyle: .round, dashed: false)
 }
 
 
 //right side spine bone. first level bone
 
 for u in stride(from: 50, through: 375, by: 100){
-    canvas.drawLine(from: Point(x: u, y: 565), to: Point(x: u+15, y: 555), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: u, y: 555), to: Point(x: u+15, y: 545), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: u, y: 545), to: Point(x: u+15, y: 535), lineWidth: 5, capStyle: .round, dashed: false)
-    canvas.drawLine(from: Point(x: u, y: 535), to: Point(x: u+15, y: 525), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: u, y: 575), to: Point(x: u+15, y: 560), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: u, y: 560), to: Point(x: u+15, y: 545), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: u, y: 545), to: Point(x: u+15, y: 530), lineWidth: 5, capStyle: .round, dashed: false)
+    canvas.drawLine(from: Point(x: u, y: 530), to: Point(x: u+15, y: 515), lineWidth: 5, capStyle: .round, dashed: false)
     
 }
 
