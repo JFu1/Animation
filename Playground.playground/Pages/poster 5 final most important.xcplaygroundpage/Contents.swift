@@ -161,7 +161,7 @@ canvas.drawText(message: "becomes opal", at: Point(x: 10, y: 318), size: 30, ker
 canvas.drawText(message: "2019, march, 19", at: Point(x: 10, y: 240), size: 10, kerning: 0)
 canvas.drawText(message: "mercedes-benz arena", at: Point(x: 10, y: 210), size: 10, kerning: 0)
 canvas.drawText(message: "shangHai", at: Point(x: 10, y: 225), size: 10, kerning: 0)
-canvas.drawText(message: "by yonezu Kenshi", at: Point(x: 215, y: 210), size: 20, kerning: 0)
+canvas.drawText(message: "by yonezu kenshi", at: Point(x: 215, y: 210), size: 20, kerning: 0)
 
 
 
